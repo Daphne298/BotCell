@@ -60,9 +60,7 @@ $(document).ready(function(){
 });
 
 // ----------------------Funciones de los botones 
-document.getElementById("MostrarProductos").onclick = MostrarProductos;
-
-
+document.getElementById("MostrarProductos").onclick = MostrarProductos ;
 function MostrarProductos(){
 	$value = "Mostrar Productos";
 	$msg = '<div class="user-inbox inbox"><div class="msg-header"><p>'+ $value +'</p></div></div>';
