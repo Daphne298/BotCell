@@ -1,9 +1,9 @@
 <?php
   class Conexion{
-    private $servidor="http://ramptors.net/mysql";
-    private $usuario="chatsell";
-    private $password="ChatSell*#969798";
-    private $base="chatsell";
+    private $servidor="hstng01.ci4cd.net:3306";
+    private $username = "lpichardo";
+    private $password = "HmAmw4sDw7Mz7hF5";
+    private $database = "lpichardo";
     protected $con="";
 
     function __construct(){

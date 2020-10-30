@@ -27,17 +27,11 @@
                 </div>
                 <div class="msg-header">
                     <p>Hola! Soy soy la asistente inteligente de Muller Lewis y te ayudaré a mejorar tu experiencia con nosotros.<br>Gracias por contactarte.<br>¿Dime, cómo te puedo ayudar hoy?</p>
-                    <button type="button" class="btn btn-primary" id="MostrarProductos" onclick="MostrarProductos();" >
-                    Mostrar Productos</button>
+                    <button type="button" class="btn btn-primary" id="Cotizacion" onclick="Cotizacion();" >
+                    Cotizaciòn</button>
                     <br><br>
-                    <button type="button" class="btn btn-warning" id="EstatusCompra" onclick="EstatusCompra();">
-                    Estatus Compra</button>
-                    <br><br>
-                    <button type="button" class="btn btn-info" id="AtencionClientes" onclick="AtencionClientes();" >
-                    Atencion Clientes</button>
-                    <br><br>
-                    <button type="button" class="btn btn-danger" id="CancelarCompra" onclick="CancelarCompra();" >
-                    Cancelar Compra</button>
+                    <button type="button" class="btn btn-primary" id="Campana" onclick="Campana();">
+                    Campaña</button>
                 </div>
             </div>
         </div>

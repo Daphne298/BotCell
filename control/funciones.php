@@ -1,5 +1,5 @@
 <?php
-include 'conexion.php';
+include './control/conexion.php';
 
 class Funciones extends Conexion{
 
