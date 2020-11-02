@@ -1,6 +1,6 @@
 <?php
 
-$x = $_GET [ x ];
+$x = $_POST [ 'text' ];
 
     include "control/conexion00.php";
 
