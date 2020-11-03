@@ -140,6 +140,7 @@ html,body{
     border-top: 1px solid #d9d9d9;
     border-radius: 0 0 5px 5px;
 }
+
 .wrapper .typing-field .input-data{
     height: 40px;
     width: 335px;
@@ -190,6 +191,32 @@ html,body{
 }
 .typing-field .input-data button:hover{
     background: #006fef;
+}
+
+.wrapper .botones{
+    display: flex;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #ffffff;
+    border-top: 1px solid #ffffff;
+    border-radius: 0 0 5px 5px;
+}
+.wrapper.botones button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    height: 30px;
+    width: 65px;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 3px;
 }
 
 /* --- --- CONTENEDOR --- --- */

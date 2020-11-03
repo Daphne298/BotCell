@@ -24,15 +24,36 @@
                 </div>
                 <div class="msg-header">
                     <p>Hola! Soy soy la asistente inteligente de Muller Lewis y te ayudaré a mejorar tu experiencia con nosotros.<br>Gracias por contactarte.<br>¿Dime, cómo te puedo ayudar hoy?</p>
-                    <button type="button" class="btn btn-primary" id=Cotizacion >
-                    Cotizaciòn</button>
-                    <br><br>
-                    <button type="button" class="btn btn-primary" id=Campana >
-                    Campaña</button>
                 </div>
             </div>
         </div>
         <form>
+        <div class="botones">
+            <div id=inicio>
+                <button type="button" class="btn btn-primary" id=Cotizar >
+                    Cotizar
+                </button>
+                <button type="button" class="btn btn-primary" id=Campana >
+                    Campaña
+                </button>
+            </div>
+            <div id=segundo>
+                <button type="button" class="btn btn-primary" id=MostrarProductos >
+                    Mostrar Productos
+                </button>
+                <button type="button" class="btn btn-warning" id=EstatusCompra >
+                    Estatus Compra
+                </button>
+                <button type="button" class="btn btn-info" id=AtencionClientes >
+                    Atencion Clientes
+                </button>
+                <button type="button" class="btn btn-danger" id=CancelarCompra >
+                        Cancelar Compra
+                </button>
+            </div>
+
+            
+        </div>
         <div class="typing-field">
             <div class="input-data">
                 <input id="data" type="text" placeholder="Escribe tu pregunta..." required>
@@ -43,9 +64,9 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
 	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-    <script src="js/app.js"></script>
     <script src="js/jquery-3.4.0.min.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/app.js"></script>
     
 </body>
 </html>

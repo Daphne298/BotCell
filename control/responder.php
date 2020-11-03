@@ -1,21 +1,19 @@
 <?php
 
-$x = $_POST [ 'text' ];
-
     include "control/conexion00.php";
+    
+    $getMesg =  $_POST['text'];
 
-    $q = "SELECT * FROM cpr WHERE pregunta = '$x'; ";
+    $query = "SELECT Respuesta FROM cpr WHERE Pregunta = '%$getMesg%';";
 
-    $r = mysql_query ( $q, $conexion00 );
+    $run_query = mysqli_query($conexion00, $query);
 
-    $row = mysql_fetch_array ( $r );
-
-    $json = array();
-
-    $json['Respuesta'][]=$row[Respuesta];
-
-    echo json_encode($json);
-
-    include "control/desconexion00.php";
+    if(mysqli_num_rows($run_query) > 0){
+        //Da la respuesta del cliente
+        $fetch_data = mysqli_fetch_assoc($run_query);
+        //almacena la respuesta en el AJAX
+        $replay = $fetch_data['Respuesta'];
+        echo $replay;
+    }
 
 ?>

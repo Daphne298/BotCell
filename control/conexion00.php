@@ -1,15 +1,13 @@
 <?php
 
-$hostname = "hstng01.ci4cd.net:3306";
+    $hostname = "localhost";
 
-$username = "lpichardo";
+    $username = "root";
 
-$password = "HmAmw4sDw7Mz7hF5";
+    $password = "Holamundo";
 
-$database = "lpichardo";
+    $database = "mullertest";
 
-$conexion00 = mysql_connect ( $hostname, $username, $password );
-
-mysql_select_db ( $database, $conexion00 );
+    $conexion00 = mysqli_connect ( $hostname, $username, $password, $database);
 
 ?>
