@@ -17,7 +17,7 @@
         <div class="header">
                         <h4> <img src='imagenes/Mlogo.png' class='imgRedonda'/> <br>CHATBOT Muller Lewis</h4>           
                     </div>
-        <div class="form" method="post" autocomplete="no">
+        <div class="form" method="post" autocomplete="no" id="form">
             <div class="bot-inbox inbox">
                 <div class="icon">
                     <img src='imagenes/chat.png' class='imgRedonda2'>

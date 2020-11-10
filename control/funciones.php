@@ -84,6 +84,16 @@ class Funciones extends Conexion{
 
     }
 
+    function getResponder($msg){
+        $queryPregunta = "SELECT Respuesta FROM cpr WHERE Pregunta LIKE '%$msg%'";
+        $Respuesta = $this->con->query($conn, $todos_productos) or die("Error");
+
+    }
+
+    function eliminarPedido(){
+        
+    }
+
 
     function cerrarConexion(){
 
