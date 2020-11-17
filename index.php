@@ -23,8 +23,8 @@
                     <img src='imagenes/chat.png' class='imgRedonda2'>
                 </div>
                 <div class="msg-header">
-                    <p>Hola! Soy soy la asistente inteligente de Muller Lewis y te ayudaré a mejorar tu experiencia con nosotros.<br>Gracias por contactarte.<br>¿Dime, cómo te puedo ayudar hoy?</p>
-                </div>
+                    <p>Hola! Soy la asistente inteligente de Muller Lewis y te ayudaré a mejorar tu experiencia con nosotros.<br>Gracias por contactarte.<br>¿Dime, cómo te puedo ayudar hoy?</p>
+                </div> 
             </div>
         </div>
         <form>
@@ -38,17 +38,17 @@
                 </button>
             </div>
             <div id=segundo>
-                <button type="button" class="btn btn-primary" id=MostrarProductos >
-                    Mostrar Productos
+                <button type="button" class="btn btn-primary" id=Comprar >
+                    Comprar
                 </button>
                 <button type="button" class="btn btn-warning" id=EstatusCompra >
-                    Estatus Compra
+                    Estatus compra
                 </button>
                 <button type="button" class="btn btn-info" id=AtencionClientes >
-                    Atencion Clientes
+                    Atencion a clientes
                 </button>
                 <button type="button" class="btn btn-danger" id=CancelarCompra >
-                        Cancelar Compra
+                        Cancelar compra
                 </button>
             </div>
 

@@ -15,12 +15,5 @@ if(mysqli_num_rows($run_query) > 0){
     //almacena la respuesta en el AJAX
     $replay = $fetch_data['Respuesta'];
     echo $replay;
-}else{ // Si No existe su consulta mandara lo siguiente.
-    echo "Contacta con un ejecutivo de <br>Muller Lewis.<br><br>";
-    ?> 
-    <i class="fas fa-phone-alt"></i>
-    <input type=button class="Contact" value="Contactarlo" onClick="Contactanos()">
-     <?php 
 }
-
 ?>

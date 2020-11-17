@@ -90,8 +90,20 @@ class Funciones extends Conexion{
 
     }
 
-    function eliminarPedido(){
-        
+    function eliminarPedido($id){
+        $id_pedido = $this->con->real_escape_string($id);
+        $nueva_consulta=$this->con->prepare("UPDATE pedido  SET pedi_STATUS  =  BAJA WHERE pedi_ID = ? ");
+        $nueva_consulta->bind_param("i",$id_pedido);
+        $nueva_consulta->execute();
+        $nueva_consulta->close();
+    }
+
+    function estatusPedido($id){
+        $id_pedido = $this->con->real_escape_string($id);
+        $nueva_consulta=$this->con->prepare("SELECT pedi_STATUS_PED from pedido WHERE pedi_ID = ? ");
+        $nueva_consulta->bind_param("i",$id_pedido);
+        $nueva_consulta->execute();
+        $nueva_consulta->close();
     }
 
 
