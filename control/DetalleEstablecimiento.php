@@ -1,24 +1,27 @@
 <?php
 // Conectar a la base de datos
 include 'conexion00.php';
-            $sql = "SELECT * FROM establecimiento where est_STATUS = 'ALTA'";
-            $resultado = $conexion00->query($sql);
+    // Recibir el mensaje del cliente.
+    $id =  $_POST['ide'];
 
-            if($resultado->num_rows > 0){
-                while($row = $resultado->fetch_assoc()){
-                    ?>
-                        <?php echo $row['est_ID'];
-                        echo "<br>";
-                        echo $row['est_ESTADO'];
-                        echo "<br>";
-                        echo $row['est_DIREC'];
-                        echo "<br>";
-                        echo $row['est_HORARIO'];
-                        echo "<br>";
-                        echo "<br>";
-                        echo "----------->";
-                        echo "<br>";
-                        echo "<br>";
-                }
-            }
-   
+    $sql = "SELECT * FROM establecimiento where est_STATUS = 'ALTA' and est_ID = '$id'";
+    $resultado = $conexion00->query($sql);
+
+    if($resultado->num_rows > 0){
+        while($row = $resultado->fetch_assoc()){
+            echo $row['est_ID'];
+            echo " ";
+            echo $row['est_ESTADO'];
+            echo "<br>";
+            echo $row['est_DIREC'];
+            echo "<br>";
+            echo $row['est_HORARIO'];
+            echo "<br>";
+            echo "<br>";
+            ?>
+            <input type="button" class="btn btn-primary" name="establecimientos" id="<?php echo $row['est_ID']; ?>" 
+			value="Agendar Cita" onclick="verestablecimientx(this)" />  <br>
+            <?php
+        }
+    }
+?>   

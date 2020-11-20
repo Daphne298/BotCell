@@ -130,6 +130,7 @@ html,body{
     color: #333;
     background: #efefef;
 }
+
 .wrapper .typing-field{
     display: flex;
     height: 60px;
@@ -227,74 +228,62 @@ html,body{
 }
 
 /* --- --- CAROUSEL --- --- */
-.carousel__contenedor {
-    position: relative;
+
+#carrusel {
+    float:left;
+    width:600px;
+    overflow:hidden;
+    height:203px;
+    position:relative;
+    margin-top:20px;
+    margin-bottom:20px;
 }
 
-.carousel__anterior,
-.carousel__siguiente {
-    position: absolute;
-    display: block;
-    width: 30px;
-    height: 30px;
-    border: none;
-    top: calc(50% - 35px);
-    cursor: pointer;
-    line-height: 30px;
-    text-align: center;
-    background: none;
-    color: #fff;
-    opacity: 20%;
+#carrusel .left-arrow {
+    position:absolute;
+    left:10px;
+    z-index:1;
+    top:50%;
+    margin-top:-9px;
 }
 
-.carousel__anterior:hover,
-.carousel__siguiente:hover {
-    opacity: 100%;
+#carrusel .right-arrow {
+    position:absolute;
+    right:10px;
+    z-index:1;
+    top:50%;
+    margin-top:-9px;
 }
 
-.carousel__anterior {
-    left: -30px;
+.carrusel {
+    width:4000px;
+    left:0px;
+    position:absolute;
+    z-index:0;
 }
 
-.carousel__siguiente {
-    right: -30px;
+.carrusel>div {
+    float: left;
+    height: 203px;
+    margin-right: 5px;
+    width: 195px;
+    text-align:center;
 }
 
-.carousel__lista {
-    overflow: hidden;
+.carrusel img {
+    cursor:pointer;
 }
 
-.carousel__elemento {
-    text-align: center;
+.product {
+    border:#CCCCCC 1px solid;
 }
 
-.carousel__indicadores .glider-dot {
-    display: block;
-    width: 30px;
-    height: 4px;
-    background: #000;
-    opacity: .2;
-    border-radius: 0;
+h5 {
+    margin-top: 1rem;
 }
 
-.carousel__indicadores .glider-dot:hover {
-    opacity: .5;
-}
 
-.carousel__indicadores .glider-dot.active {
-    opacity: 1;
-}
-
-@media screen and (max-width: 800px) {
-	body {
-		padding: 40px 0;
-	}
-
-	.contenido-principal {
-		flex-direction: column;
-	}
-
-	.contenido-principal > * {
-		width: 100%;
-	}
+/*efecto de div*/
+.resaltar:hover {
+  border: 2px solid black;
 }

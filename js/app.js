@@ -3,11 +3,13 @@ document.getElementById("segundo").style.display = "none";
 // informacion
 var dato;
 
+var contador = 0;
 // guarda los datos del usuario 
 var respuestasUsu = [];
 //guarda los datos del domicilio del usuario 
 var respuestasDomicilio = [];
 // preguntas para el usuario 
+
 const preguntasUsu = [
 
     {
@@ -77,9 +79,10 @@ document.getElementById('Campana').addEventListener('click', function () {
 //Si preciona el boton comprar
 document.getElementById('Comprar').addEventListener('click', function () {
 	dato = 'comprar';
-	respuestaUsuario(dato);
+	respuestaUsuario('Comprar');
     document.getElementById("segundo").style.display = "none";
     control();
+    mostarProductos();
 });
 
 //Si preciona el boton estatus compra
@@ -110,6 +113,13 @@ document.getElementById('CancelarCompra').addEventListener('click', function () 
 document.getElementById('send-btn').addEventListener('click', function () {
     respuestaUsuario();     
     control();           
+    $value = $("#data").val();
+    var resp = $value;
+    if (dato.equals("comprar")){
+                if (resp == ''){ }
+                if (preguntasUsu[contador].reGex.test(resp)){ }
+            }
+        
 });
 
 
@@ -121,7 +131,6 @@ function control(){
         data: 'text='+ dato,
         success: function (response) {
             responderChatbot(response);
-        
         }
     });
 }
@@ -189,7 +198,15 @@ function estatusCompra(id_compra){
 
 // Mostrara todos los productos al usuario 
 function mostarProductos(){
-
+    $.ajax({
+        url: 'control/Productos.php',
+        type: 'POST',
+        data: dato,
+        success: function (response) {
+            responderChatbot(response);
+        
+        }
+    });
 }
 
 // Escribe la respuesta asistente virtual 
@@ -222,3 +239,29 @@ const removeAccents =(str)=>{
     return str.normalize("NFD").replace(/[\u0301-\u036f]/gi,"");
   };
 
+// obtener fecha 
+function obtenerFecha() {
+    var elDate = document.getElementById('fecha_reco');
+    var elForm = document.getElementById('elForm');
+    var elSubmit = document.getElementById('elSubmit');
+    //PARA QUE EL USUARIO NO PUEDA SELECCIONAR UNA FECHA ANTERIOR
+    var n = new Date();
+    var y = n.getFullYear();
+    var m = n.getMonth() + 1;
+    var d = n.getDate();
+    var fecha = y + "-" + m + "-" + d;
+    document.getElementById('fecha_reco').min = fecha;
+    //PARA QUE EL USUARIO NO PUEDA SELECCIONAR SABADOS NI DOMINGOS
+    var day = new Date(elDate.value).getUTCDay();
+    // Días 0-6, 0 es Domingo 6 es Sábado
+    elDate.setCustomValidity(''); // limpiarlo para evitar pisar el fecha inválida
+    if (day == 0 || day == 6) {
+        elDate.setCustomValidity('Sabados y Domingos no disponibles, por favor seleccione otro día');
+    } else {
+        elDate.setCustomValidity('');
+    }
+    //PARA DAR EL CHECK DE LA FECHA (EL SUMBITE JAMAS SE VE)
+    if (!elForm.checkValidity()) {
+        elSubmit.click()
+    };
+}
